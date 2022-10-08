@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-assign',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssignPage implements OnInit {
 
-  constructor() { }
+  constructor(public navCtrl: NavController) {}
+
+  abrirHome() {
+      this.navCtrl.navigateForward("home")
+    }
 
   ngOnInit() {
   }
