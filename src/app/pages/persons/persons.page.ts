@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { PersonsService } from 'src/app/services/persons.service';
+import { Person } from '../models/person.model';
 
 @Component({
   selector: 'app-persons',
@@ -8,12 +10,15 @@ import { NavController } from '@ionic/angular';
 })
 export class PersonsPage implements OnInit {
 
-  constructor(public navCtrl: NavController) {}
+  people: Person;
 
-  abrirHome() {
-      this.navCtrl.navigateForward("home")
-    }
+  constructor(private person: PersonsService ) {}
+
   ngOnInit() {
+  }
+
+  getPeople(): Person[] {
+    return this.person.getPeople();
   }
 
 }

@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { PersonsPageRoutingModule } from './persons-routing.module';
 
 import { PersonsPage } from './persons.page';
-
 @NgModule({
   imports: [
     CommonModule,

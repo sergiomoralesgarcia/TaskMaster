@@ -1,12 +1,16 @@
 <ion-header>
   <ion-toolbar>
+    <ion-back-button  slot="start" defaultHref="/">Home</ion-back-button>
     <ion-title>persons</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div id="container">
-    <p>Regresar a Home:</p>
-    <ion-button (click)="abrirHome()">Home</ion-button>
   </div>
+
+  <ion-content>
+    <app-persons *ngFor="let person of getPeople()" [personInput]="person"></app-persons>
+    <!--<app-person *ngFor="let person of getPeople()" [personInput]="person"></app-person>-->
+  </ion-content>
 </ion-content>

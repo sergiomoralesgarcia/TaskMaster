@@ -8,11 +8,8 @@ import { NavController } from '@ionic/angular';
 })
 export class AssignPage implements OnInit {
 
-  constructor(public navCtrl: NavController) {}
+  constructor() {}
 
-  abrirHome() {
-      this.navCtrl.navigateForward("home")
-    }
 
   ngOnInit() {
   }

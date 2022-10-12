@@ -8,11 +8,7 @@ import { NavController } from '@ionic/angular';
 })
 export class TasksPage implements OnInit {
 
-  constructor(public navCtrl: NavController) {}
-
-  abrirHome() {
-      this.navCtrl.navigateForward("home")
-    }
+  constructor() {}
 
   ngOnInit() {
   }
