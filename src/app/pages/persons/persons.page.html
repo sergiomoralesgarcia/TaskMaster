@@ -10,7 +10,8 @@
   </div>
 
   <ion-content>
-    <app-persons *ngFor="let person of getPeople()" [personInput]="person"></app-persons>
-    <!--<app-person *ngFor="let person of getPeople()" [personInput]="person"></app-person>-->
+    <ion-col *ngFor="let p of getPeople()">
+      <app-people [people]="person"></app-people>
+    </ion-col>
   </ion-content>
 </ion-content>

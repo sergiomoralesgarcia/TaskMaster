@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { PersonsService } from 'src/app/services/persons.service';
-import { Person } from '../models/person.model';
+import { Persons } from '../models/person.model';
 
 @Component({
   selector: 'app-persons',
@@ -10,14 +10,14 @@ import { Person } from '../models/person.model';
 })
 export class PersonsPage implements OnInit {
 
-  people: Person;
+  people: Persons;
 
   constructor(private person: PersonsService ) {}
 
   ngOnInit() {
   }
 
-  getPeople(): Person[] {
+  getPeople(): Persons[] {
     return this.person.getPeople();
   }
 

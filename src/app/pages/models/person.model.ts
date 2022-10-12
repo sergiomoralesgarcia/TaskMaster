@@ -1,6 +1,6 @@
-export interface Person {
+export interface Persons {
     id: number;
     name: string;
-    surname: string;
-    image: string; //url to an image
+    nickname: string;
+    image: string; 
 }
