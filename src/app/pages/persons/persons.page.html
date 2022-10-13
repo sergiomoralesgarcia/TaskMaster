@@ -1,17 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-back-button  slot="start" defaultHref="/">Home</ion-back-button>
-    <ion-title>persons</ion-title>
+      <ion-back-button slot="start" defaultHref="/">Home</ion-back-button>
+    <ion-title>Persons</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div id="container">
-  </div>
+    <div id="container">
+    </div>
 
-  <ion-content>
-    <ion-col *ngFor="let p of getPeople()">
-      <app-people [people]="person"></app-people>
-    </ion-col>
-  </ion-content>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let Persons of getPeople()" >
+        <app-people [people]="Persons"></app-people>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+  
+

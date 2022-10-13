@@ -3,7 +3,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { PersonComponent } from './person.component';
 
-describe('PersonComponent', () => {
+describe('PeopleComponent', () => {
   let component: PersonComponent;
   let fixture: ComponentFixture<PersonComponent>;
 

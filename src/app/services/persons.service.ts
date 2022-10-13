@@ -1,43 +1,47 @@
 import { Injectable } from '@angular/core';
-import { Persons } from '../pages/models/person.model';
+import { Persons } from '../models/person.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PersonsService {
-  public people: Persons[] = [
+export class userPersonService {
+  person:Persons[] = [
     {
       id: 0,
-      name: 'Rodri',
-      nickname: 'Cordobés',
+      name: 'Diego Rodriguez',
+      nickname: 'Cordobeh',
+      age: 20,
       image: ''
     },
     {
       id: 1,
-      name: 'Cueto',
+      name: 'Alejandro Cueto',
       nickname: 'Friki',
+      age: 19,
       image: ''
     },
     {
       id: 2,
-      name: 'Alberto',
+      name: 'Alberto Parra',
       nickname: 'Parringson',
+      age: 18,
       image: ''
     },
     {
       id: 3,
-      name: 'Álvaro',
-      nickname: 'Rey',
+      name: 'Álvaro Linero',
+      nickname: 'ElRey',
+      age: 19,
       image: ''
     }
   ]
   constructor() { }
 
-  getPeople(): Persons[] {
-    return this.people;
+  getPeople(): Persons[]{
+    return this.person;
   }
-
-  getPeopleById(id: number): Persons{
-    return this.people[id];
+  
+  public getPeopleById(id:number): Persons{
+    return this.person[id];
   }
 }

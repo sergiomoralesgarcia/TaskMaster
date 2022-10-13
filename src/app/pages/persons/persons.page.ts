@@ -1,24 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { PersonsService } from 'src/app/services/persons.service';
-import { Persons } from '../models/person.model';
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { userPersonService } from 'src/app/services/persons.service';
+import { Persons } from 'src/app/models/person.model';
 
 @Component({
   selector: 'app-persons',
   templateUrl: './persons.page.html',
   styleUrls: ['./persons.page.scss'],
 })
-export class PersonsPage implements OnInit {
+export class PersonsPage {
 
-  people: Persons;
+  person:Persons[]; 
 
-  constructor(private person: PersonsService ) {}
+  constructor(private user:userPersonService ) {}
 
   ngOnInit() {
   }
 
-  getPeople(): Persons[] {
-    return this.person.getPeople();
+  getPeople(){ 
+    return this.user.getPeople(); 
   }
 
 }
