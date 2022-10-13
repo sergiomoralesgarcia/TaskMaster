@@ -33,6 +33,13 @@ export class userPersonService {
       nickname: 'ElRey',
       age: 19,
       image: ''
+    },
+    {
+      id: 4,
+      name: 'David Antúnez',
+      nickname: 'Fernando Alonso',
+      age: 19,
+      image: ''
     }
   ]
   constructor() { }
