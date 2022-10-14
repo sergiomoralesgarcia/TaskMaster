@@ -42,13 +42,19 @@ export class userPersonService {
       image: ''
     }
   ]
+
+  id:number = this.person.length+1;
   constructor() { }
 
   getPeople(): Persons[]{
     return this.person;
   }
   
-  public getPeopleById(id:number): Persons{
-    return this.person[id];
+  getPeopleById(id:number): Persons{
+    return this.person.find(p=>p.id==id);
+  }
+
+  deletePersonById(id:number){
+    this.person = this.person.filter(p=>p.id != id); 
   }
 }
