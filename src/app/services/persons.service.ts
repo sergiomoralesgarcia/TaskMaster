@@ -57,4 +57,20 @@ export class userPersonService {
   deletePersonById(id:number){
     this.person = this.person.filter(p=>p.id != id); 
   }
+
+  addPerson(person:Persons){
+    person.id = this.id++;
+    this.person.push(person);
+  }
+
+  updatePerson(person:Persons){
+    var _person = this.person.find(p=>p.id==person.id);
+    if(_person){
+      _person.name = person.name;
+      _person.nickname = person.nickname;
+      _person.age = person.age;
+      _person.image = person.image;
+    }
+    
+  }
 }
