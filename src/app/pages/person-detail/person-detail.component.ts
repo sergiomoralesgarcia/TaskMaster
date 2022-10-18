@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
-import { Persons } from 'src/app/models/person.model';
+import { Person } from 'src/app/models/person.model';
 
 @Component({
   selector: 'app-person-detail',
@@ -12,7 +12,7 @@ export class PersonDetailComponent implements OnInit {
 
   form:FormGroup;
   mode:"New" | "Edit" = "New";
-  @Input('person') set person(person:Persons){
+  @Input('person') set person(person:Person){
     if(person){
       this.form.controls.id.setValue(person.id);
       this.form.controls.name.setValue(person.name);
@@ -30,8 +30,8 @@ export class PersonDetailComponent implements OnInit {
     this.form = this.fb.group({
       id:[null],
       name:['', [Validators.required]],
-      surname:['', [Validators.required]],
       nickname:['', [Validators.required]],
+      age:['', [Validators.required]],
       picture:['']
     });
   }
@@ -41,11 +41,10 @@ export class PersonDetailComponent implements OnInit {
   }
 
   onSubmit(){
-    
     this.modal.dismiss({person: this.form.value, mode:this.mode}, 'ok');
   }
 
-  onDismiss(result){
+  onDismiss(){
     this.modal.dismiss(null, 'cancel');
   }
 

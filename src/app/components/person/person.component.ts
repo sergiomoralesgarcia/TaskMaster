@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Persons } from 'src/app/models/person.model';
+import { Person } from 'src/app/models/person.model';
 
 @Component({
   selector: 'app-people',
@@ -9,7 +9,7 @@ import { Persons } from 'src/app/models/person.model';
 export class PersonComponent implements OnInit {
   @Output() onEdit = new EventEmitter;
   @Output() onDelete = new EventEmitter;
-  @Input() people : Persons;
+  @Input() person : Person;
   
   
   constructor() { }
@@ -17,10 +17,10 @@ export class PersonComponent implements OnInit {
   ngOnInit() {}
 
   onEditClick(){
-    this.onEdit.emit(this.people);
+    this.onEdit.emit(this.person);
   }
 
   onDeleteClick(){
-    this.onDelete.emit(this.people);
+    this.onDelete.emit(this.person);
   }
 }

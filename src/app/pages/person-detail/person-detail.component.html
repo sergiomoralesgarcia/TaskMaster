@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>Datos de la persona</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="onDismiss(null)">Cerrar</ion-button>
+      <ion-button (click)="onDismiss()">Cerrar</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,20 +12,21 @@
       <ion-label position="floating">
         Nombre
       </ion-label>
-      <ion-input type="text" placeholder="Introduce tu nombre" formControlName="name"></ion-input>
+      <ion-input type="text" placeholder="Introduce el nombre" formControlName="name"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        Apellidos
+        Apodo
       </ion-label>
-      <ion-input type="text" placeholder="Introduce tus apellidos" formControlName="surname"></ion-input>
+      <ion-input type="text" placeholder="Introduce el apodo" formControlName="nickname"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        Nickname
+        Edad
       </ion-label>
-      <ion-input type="text" placeholder="Introduce tu apodo" formControlName="nickname"></ion-input>
+      <ion-input type="text" placeholder="Introduce la edad" formControlName="age"></ion-input>
     </ion-item>
+    
     <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
   </form>
 </ion-content>

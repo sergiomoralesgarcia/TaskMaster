@@ -2,15 +2,17 @@
   <ion-toolbar>
       <ion-back-button slot="start" defaultHref="/">Home</ion-back-button>
     <ion-title>Persons</ion-title>
+    <ion-button (click)="onNewPerson()" slot="end" style="margin:10px;width:50px;height:50px;--border-radius:50%;margin-right: 2%;" icon-only><ion-icon style="zoom:2" name="add-outline"></ion-icon></ion-button>
   </ion-toolbar>
-</ion-header>
-<ion-button (click)="onNewPerson()" style="margin:10px;width:50px;height:50px;--border-radius:50%" slot="start" icon-only><ion-icon style="zoom:2" name="add-outline"></ion-icon></ion-button>
-<ion-content>
   
+  
+</ion-header>
+
+<ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let Persons of getPeople()"  size="12" size-md="6">
-        <app-people [people]="Persons" (onEdit)="onEditPerson($event)"(onDelete)="onDeletePerson($event)" ></app-people>
+      <ion-col *ngFor="let persons of getPeople()"  size="12" size-md="6">
+        <app-people [person]="persons" (onEdit)="onEditPerson($event)"(onDelete)="onDeletePerson($event)" ></app-people>
       </ion-col>
     </ion-row>
   </ion-grid>

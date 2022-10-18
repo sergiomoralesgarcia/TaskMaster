@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { userPersonService } from 'src/app/services/persons.service';
-import { Persons } from 'src/app/models/person.model';
 import { AlertController, ModalController } from '@ionic/angular';
 import { PersonDetailComponent } from '../person-detail/person-detail.component';
+import { Person } from 'src/app/models/person.model';
 
 @Component({
   selector: 'app-persons',
@@ -11,12 +10,10 @@ import { PersonDetailComponent } from '../person-detail/person-detail.component'
   styleUrls: ['./persons.page.scss'],
 })
 export class PersonsPage {
-
-  //person:Persons[]; 
-  private alert:AlertController
-  private modal:ModalController
-  private peopleSvc:userPersonService
-  constructor(private user:userPersonService ) {}
+  constructor(private user:userPersonService,
+    private alert:AlertController,
+    private modal: ModalController,
+    private personService:userPersonService) {}
 
   ngOnInit() {
   }
@@ -25,8 +22,8 @@ export class PersonsPage {
     return this.user.getPeople(); 
   }
 
-  async presentPersonForm(person:Persons){
-    const modal = await this.modal.create({
+  async presentPersonForm(person:Person){
+    const modal = await this.modal.create ({
       component:PersonDetailComponent,
       componentProps:{
         person:person
@@ -37,10 +34,10 @@ export class PersonsPage {
       if(result && result.data){
         switch(result.data.mode){
           case 'New':
-            this.peopleSvc.addPerson(result.data.person);
+            this.personService.addPerson(result.data.person);
             break;
           case 'Edit':
-            this.peopleSvc.updatePerson(result.data.person);
+            this.personService.updatePerson(result.data.person);
             break;
           default:
         }
@@ -49,14 +46,15 @@ export class PersonsPage {
   }
   
   onNewPerson(){
-    this.presentPersonForm(null);  
+    this.presentPersonForm(null);
+    
   }
 
   onEditPerson(person){
     this.presentPersonForm(person);
   }
 
-  async onDeleteAlert(people){
+  async onDeleteAlert(person){
     const alert = await this.alert.create({
       header: '¿Está seguro de que desear borrar a la persona?',
       buttons: [
@@ -71,17 +69,16 @@ export class PersonsPage {
           text: 'Borrar',
           role: 'confirm',
           handler: () => {
-            this.peopleSvc.deletePersonById(people.id);
+            this.personService.deletePersonById(person.id);
           },
         },
       ],
     });
     await alert.present();
 
-    const { role } = await alert.onDidDismiss();
   }
-  onDeletePerson(people){
-    this.onDeleteAlert(people);
+  onDeletePerson(person){
+    this.onDeleteAlert(person);
     
   }
 }

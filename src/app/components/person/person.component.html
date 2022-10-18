@@ -1,8 +1,8 @@
 <ion-card>
   <ion-card-header>
     <img src="\assets\user.png">
-    <ion-card-title>{{people.name}}</ion-card-title>
-    <ion-card-subtitle>{{people.nickname}}, {{people.age}} años</ion-card-subtitle>
+    <ion-card-title>{{person.name}}</ion-card-title>
+    <ion-card-subtitle>{{person.nickname}}, {{person.age}} años</ion-card-subtitle>
     <ion-button icon-only fill="clear" (click)="onEditClick()"><ion-icon style="zoom:1.5" name="pencil-sharp"></ion-icon></ion-button>
     <ion-button icon-only fill="clear" color="danger" (click)="onDeleteClick()"><ion-icon style="zoom:1.5" name="close-sharp"></ion-icon></ion-button>
   </ion-card-header>

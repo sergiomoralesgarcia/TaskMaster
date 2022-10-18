@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Persons } from '../models/person.model';
+import { Person } from '../models/person.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class userPersonService {
-  person:Persons[] = [
+  private _people:Person[] = [
     {
       id: 0,
       name: 'Diego Rodriguez',
@@ -43,28 +43,28 @@ export class userPersonService {
     }
   ]
 
-  id:number = this.person.length+1;
+  id:number = this._people.length+1;
   constructor() { }
 
-  getPeople(): Persons[]{
-    return this.person;
+  getPeople(){
+    return this._people;
   }
   
-  getPeopleById(id:number): Persons{
-    return this.person.find(p=>p.id==id);
+  getPeopleById(id:number){
+    return this._people.find(p=>p.id==id);
   }
 
   deletePersonById(id:number){
-    this.person = this.person.filter(p=>p.id != id); 
+    this._people = this._people.filter(p=>p.id != id); 
   }
 
-  addPerson(person:Persons){
+  addPerson(person:Person){
     person.id = this.id++;
-    this.person.push(person);
+    this._people.push(person);
   }
 
-  updatePerson(person:Persons){
-    var _person = this.person.find(p=>p.id==person.id);
+  updatePerson(person:Person){
+    var _person = this._people.find(p=>p.id==person.id);
     if(_person){
       _person.name = person.name;
       _person.nickname = person.nickname;
