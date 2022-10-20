@@ -8,37 +8,37 @@ export class TasksService {
   private _task: Task[] = [
     {
       id: 0,
-      name: 'Diego Rodriguez',
-      description: 'Cordobeh',
-      timeInSeconds: 20,
+      name: 'Lavar platos',
+      description: 'Lava todos los platos sucios de la cocina',
+      timeInSeconds: 20000,
       image: ''
     },
     {
       id: 1,
-      name: 'Alejandro Cueto',
-      description: 'Friki',
-      timeInSeconds: 19,
+      name: 'Ordenar la habitación',
+      description: 'Limpia y recoje tu cuarto, dejandolo ordenado',
+      timeInSeconds: 40000,
       image: ''
     },
     {
       id: 2,
-      name: 'Alberto Parra',
-      description: 'Parringson',
-      timeInSeconds: 18,
+      name: 'Hacer los deberes',
+      description: 'Haz los deberes que tengas pendientes antes de que acabe el dia',
+      timeInSeconds: 30000,
       image: ''
     },
     {
       id: 3,
-      name: 'Álvaro Linero',
-      description: 'ElRey',
-      timeInSeconds: 19,
+      name: 'Ir al gimnasio',
+      description: 'Ve al gym a hacer ejercicio y despejarte un poco',
+      timeInSeconds: 12000,
       image: ''
     },
     {
       id: 4,
-      name: 'David Antúnez',
-      description: 'Fernando Alonso',
-      timeInSeconds: 19,
+      name: 'Jugar al lol',
+      description: 'Gana una ranked en un torneo contra Werlyb',
+      timeInSeconds: 50000,
       image: ''
     }
   ]
