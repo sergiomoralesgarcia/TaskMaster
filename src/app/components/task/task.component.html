@@ -1,0 +1,9 @@
+<ion-card>
+  <ion-card-header>
+    <img src="\assets\user.png">
+    <ion-card-title>{{task.name}}</ion-card-title>
+    <ion-card-subtitle>{{task.description}}, {{task.timeInSeconds}} segundos</ion-card-subtitle>
+    <ion-button icon-only fill="clear" (click)="onEditClick()"><ion-icon style="zoom:1.5" name="pencil-sharp"></ion-icon></ion-button>
+    <ion-button icon-only fill="clear" color="danger" (click)="onDeleteClick()"><ion-icon style="zoom:1.5" name="close-sharp"></ion-icon></ion-button>
+  </ion-card-header>
+</ion-card>
