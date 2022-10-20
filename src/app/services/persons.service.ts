@@ -71,6 +71,5 @@ export class userPersonService {
       _person.age = person.age;
       _person.image = person.image;
     }
-    
   }
 }

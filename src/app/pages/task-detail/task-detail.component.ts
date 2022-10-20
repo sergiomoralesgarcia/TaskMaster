@@ -16,8 +16,8 @@ export class TaskDetailComponent implements OnInit {
     if (task) {
       this.form.controls.id.setValue(task.id);
       this.form.controls.name.setValue(task.name);
-      this.form.controls.nickname.setValue(task.description);
-      this.form.controls.age.setValue(task.timeInSeconds);
+      this.form.controls.description.setValue(task.description);
+      this.form.controls.timeInSeconds.setValue(task.timeInSeconds);
       this.form.controls.picture.setValue(task.image);
       this.mode = "Edit";
     }
