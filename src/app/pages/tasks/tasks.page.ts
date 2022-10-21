@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController, NavController } from '@ionic/angular';
 import { Task } from 'src/app/models/task.model';
+import { AssignmentService } from 'src/app/services/assign.service';
 import { TasksService } from 'src/app/services/tasks.service';
 import { TaskDetailComponent } from '../task-detail/task-detail.component';
 
@@ -14,7 +15,8 @@ export class TasksPage implements OnInit {
     constructor(private user:TasksService,
       private alert:AlertController,
       private modal: ModalController,
-      private taskService:TasksService) {}
+      private taskService:TasksService,
+      private assignmentsSvc:AssignmentService) {}
   
     ngOnInit() {
     }
@@ -78,9 +80,31 @@ export class TasksPage implements OnInit {
       await alert.present();
   
     }
+
+    async onTaskExistsAlert(task){
+      const alert = await this.alert.create({
+        header: 'Error',
+        message: 'No es posible borrar la tarea porque está asignada a una persona',
+        buttons: [
+          {
+            text: 'Cerrar',
+            role: 'close',
+            handler: () => {
+              
+            },
+          },
+        ],
+      });
+  
+      await alert.present();
+  
+      const { role } = await alert.onDidDismiss();
+    }
     onDeleteTask(task){
-      this.onDeleteAlert(task);
-      
+      if(!this.assignmentsSvc.getAssignmentsByTaskId(task.id).length)
+        this.onDeleteAlert(task);
+      else
+        this.onTaskExistsAlert(task);
     }
   }
   

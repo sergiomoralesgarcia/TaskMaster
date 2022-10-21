@@ -6,6 +6,12 @@
 </ion-header>
 
 <ion-content>
-  <div id="container">
-  </div>
+  <ion-grid>
+  <ion-row>
+    <ion-col *ngFor="let assignment of getAssignments()" size="12" size-lg="4" size-sm="6">
+      <app-assignment  [assignment]="assignment" (onEdit)="onEditAssignment($event)" (onDelete)="onDeleteAssignment($event)"></app-assignment>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>
+
