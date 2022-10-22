@@ -101,7 +101,7 @@ export class TasksPage implements OnInit {
       const { role } = await alert.onDidDismiss();
     }
     onDeleteTask(task){
-      if(!this.assignmentsSvc.getAssignmentsByTaskId(task.id).length)
+      if(!this.assignmentsSvc.getAssignsByTaskId(task.id).length)
         this.onDeleteAlert(task);
       else
         this.onTaskExistsAlert(task);

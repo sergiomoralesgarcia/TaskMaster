@@ -102,7 +102,7 @@ export class PersonsPage {
   }
 
   onDeletePerson(person){
-    if(!this.assignmentsSvc.getAssignmentsByPersonId(person.id).length)
+    if(!this.assignmentsSvc.getAssignsByPersonId(person.id).length)
       this.onDeleteAlert(person);
     else
       this.onPersonExistsAlert(person);

@@ -1,10 +1,8 @@
 <ion-card>
   <ion-card-header>
       <img src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-      <ion-icon name="link-outline"></ion-icon>
       <img src="\assets\user.png">
-    <ion-card-title>{{assignment.dateTime}}</ion-card-title>
-    <ion-card-subtitle> años</ion-card-subtitle>
+    <ion-card-subtitle>{{assignment.dateAndTime}}</ion-card-subtitle>
     <ion-button icon-only fill="clear" (click)="onEditClick()"><ion-icon style="zoom:1.5" name="pencil-sharp"></ion-icon></ion-button>
     <ion-button icon-only fill="clear" color="danger" (click)="onDeleteClick()"><ion-icon style="zoom:1.5" name="close-sharp"></ion-icon></ion-button>
   </ion-card-header>

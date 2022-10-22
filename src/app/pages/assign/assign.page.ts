@@ -20,10 +20,10 @@ export class AssignPage implements OnInit {
   ngOnInit() {}
 
   getAssignments(){
-    return this.assignmentsSvc.getAssignments();
+    return this.assignmentsSvc.getAssigns();
   }
 
-  async presentAssignmentForm(assignment:Assignment){
+  async presentAssignForm(assignment:Assignment){
     const modal = await this.modal.create({
       component:AssignmentsDetailComponent,
       componentProps:{
@@ -36,10 +36,10 @@ export class AssignPage implements OnInit {
       if(result && result.data){
         switch(result.data.mode){
           case 'New':
-            this.assignmentsSvc.addAssignment(result.data.assignment);
+            this.assignmentsSvc.addAssign(result.data.assignment);
             break;
           case 'Edit':
-            this.assignmentsSvc.updateAssignment(result.data.assignment);
+            this.assignmentsSvc.updateAssign(result.data.assignment);
             break;
           default:
         }
@@ -47,8 +47,8 @@ export class AssignPage implements OnInit {
     });
   }
 
-  onEditAssignment(assignment){
-    this.presentAssignmentForm(assignment);
+  onEditAssign(assignment){
+    this.presentAssignForm(assignment);
   }
 
   async onDeleteAlert(assignment){
@@ -66,7 +66,7 @@ export class AssignPage implements OnInit {
           text: 'Borrar',
           role: 'confirm',
           handler: () => {
-            this.assignmentsSvc.deleteAssignmentById(assignment.id);
+            this.assignmentsSvc.deleteAssignById(assignment.id);
           },
         },
       ],
@@ -77,7 +77,7 @@ export class AssignPage implements OnInit {
     const { role } = await alert.onDidDismiss();
   }
 
-  onDeleteAssignment(assignment){
+  onDeleteAssign(assignment){
     this.onDeleteAlert(assignment);
     
   }

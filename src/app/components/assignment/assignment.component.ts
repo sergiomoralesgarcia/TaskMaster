@@ -32,16 +32,16 @@ export class AssigmentComponent implements OnInit {
   }
 
   getTask():Task{
-    var taskId = this.assignment.taskId;
-    if(taskId)
-      return this.tasksSvc.getTaskById(taskId);
+    var idTask = this.assignment.idTask;
+    if(idTask)
+      return this.tasksSvc.getTaskById(idTask);
     return undefined;
   }
 
   getPerson():Person{
-    var personId = this.assignment.personId;
-    if(personId)
-      return this.peopleSvc.getPeopleById(personId);
+    var idPerson = this.assignment.idPerson;
+    if(idPerson)
+      return this.peopleSvc.getPeopleById(idPerson);
     return undefined;
   }
 

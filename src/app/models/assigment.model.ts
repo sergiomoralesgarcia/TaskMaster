@@ -1,7 +1,7 @@
 export interface Assignment{
     id:number;
-    personId:number;
-    taskId:number;
+    idPerson:number;
+    idTask:number;
     createdAt:number;
-    dateTime:string;
+    dateAndTime:string;
 }

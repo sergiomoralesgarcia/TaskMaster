@@ -11,55 +11,55 @@ export class AssignmentService {
   private _assignments:Assignment[] = [
     {
       id:1,
-      personId:1,
-      taskId:1,
+      idPerson:1,
+      idTask:1,
       createdAt:this.momentjs().toISOString(),
-      dateTime:this.momentjs().add(1, 'days').toISOString(),
+      dateAndTime:this.momentjs().add(1, 'days').toISOString(),
     },
     {
         id:2,
-        personId:2,
-        taskId:2,
+        idPerson:2,
+        idTask:2,
         createdAt:this.momentjs().toISOString(),
-        dateTime:this.momentjs().add(1, 'days').toISOString(),
+        dateAndTime:this.momentjs().add(1, 'days').toISOString(),
       }
   ];
 
   id:number = this._assignments.length+1;
   constructor() { }
 
-  getAssignments(){
+  getAssigns(){
     return this._assignments;
   }
 
-  getAssignmentById(id:number){
+  getAssignById(id:number){
     return this._assignments.find(a=>a.id==id);
   }
 
-  getAssignmentsByTaskId(taskId:number):Assignment[]{
-    return this._assignments.filter(a=>a.taskId == taskId);
+  getAssignsByTaskId(taskId:number):Assignment[]{
+    return this._assignments.filter(a=>a.idTask == taskId);
   }
 
-  getAssignmentsByPersonId(personId:number):Assignment[]{
-    return this._assignments.filter(a=>a.personId == personId);
+  getAssignsByPersonId(personId:number):Assignment[]{
+    return this._assignments.filter(a=>a.idPerson == personId);
   }
 
-  deleteAssignmentById(id:number){
+  deleteAssignById(id:number){
     this._assignments = this._assignments.filter(a=>a.id != id); 
   }
 
-  addAssignment(assingment:Assignment){
+  addAssign(assingment:Assignment){
     assingment.id = this.id++;
     this._assignments.push(assingment);
   }
 
-  updateAssignment(assignment:Assignment){
+  updateAssign(assignment:Assignment){
     var _assignment = this._assignments.find(a=>a.id==assignment.id);
     if(_assignment){
-      _assignment.taskId = assignment.taskId;
-      _assignment.personId = assignment.personId;
+      _assignment.idTask = assignment.idTask;
+      _assignment.idPerson = assignment.idPerson;
       _assignment.createdAt = assignment.createdAt;
-      _assignment.dateTime = assignment.dateTime;
+      _assignment.dateAndTime = assignment.dateAndTime;
     }
     
   }
