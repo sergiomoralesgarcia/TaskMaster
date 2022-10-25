@@ -82,4 +82,9 @@ export class AssignPage implements OnInit {
     
   }
 
+  onNewAssign(){
+    this.presentAssignForm(null);
+    
+  }
+
 }
