@@ -1,6 +1,5 @@
 img{
-    width: 110px;
-    
+    width: 95px;
 }
 
 h1{
@@ -16,7 +15,8 @@ h1{
     margin-left: 15px;
 }
 
-@media screen and (max-width: 321px) {
+
+@media screen and (max-width: 400px) {
     img{
         width: 70px;
     }
