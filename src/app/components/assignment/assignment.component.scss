@@ -1,4 +1,24 @@
 img{
-    width: 90px;
-    margin-bottom: 8px;
+    width: 110px;
+    
 }
+
+h1{
+    text-align: center;
+    display:inline;
+}
+
+#tarea{
+    margin-right: 15px;
+}
+
+#perfil{
+    margin-left: 15px;
+}
+
+@media screen and (max-width: 321px) {
+    img{
+        width: 70px;
+    }
+}
+
