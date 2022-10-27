@@ -3,7 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { TasksService } from '../../services/tasks.service';
 import { AssignmentService } from 'src/app/services/assign.service';
 import { userPersonService } from 'src/app/services/persons.service';
-import { Assignment } from 'src/app/models/assigment.model';
+import { Assign } from 'src/app/models/assignment.model';
 import { Component, Input, OnInit } from '@angular/core';
 
 
@@ -16,7 +16,7 @@ export class AssignmentDetailComponent implements OnInit {
 
   form:FormGroup;
   mode:"New" | "Edit" = "New";
-  @Input('assignment') set assignment(assignment:Assignment){
+  @Input('assign') set assignment(assignment:Assign){
     if(assignment){
       this.form.controls.id.setValue(assignment.id);
       this.form.controls.taskId.setValue(assignment.idTask);

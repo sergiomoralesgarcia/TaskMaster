@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as moment from 'moment';
-import { Assignment } from '../models/assigment.model';
+import { Assign } from '../models/assignment.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,7 @@ import { Assignment } from '../models/assigment.model';
 export class AssignmentService {
 
   momentjs:any = moment;
-  private _assignments:Assignment[] = [
+  private _assigns:Assign[] = [
     {
       id:1,
       idPerson:1,
@@ -25,41 +25,41 @@ export class AssignmentService {
       }
   ];
 
-  id:number = this._assignments.length+1;
+  id:number = this._assigns.length+1;
   constructor() { }
 
   getAssigns(){
-    return this._assignments;
+    return this._assigns;
   }
 
   getAssignById(id:number){
-    return this._assignments.find(a=>a.id==id);
+    return this._assigns.find(a=>a.id==id);
   }
 
-  getAssignsByTaskId(taskId:number):Assignment[]{
-    return this._assignments.filter(a=>a.idTask == taskId);
+  getAssignsByTaskId(taskId:number):Assign[]{
+    return this._assigns.filter(a=>a.idTask == taskId);
   }
 
-  getAssignsByPersonId(personId:number):Assignment[]{
-    return this._assignments.filter(a=>a.idPerson == personId);
+  getAssignsByPersonId(personId:number):Assign[]{
+    return this._assigns.filter(a=>a.idPerson == personId);
   }
 
   deleteAssignById(id:number){
-    this._assignments = this._assignments.filter(a=>a.id != id); 
+    this._assigns = this._assigns.filter(a=>a.id != id); 
   }
 
-  addAssign(assingment:Assignment){
+  addAssign(assingment:Assign){
     assingment.id = this.id++;
-    this._assignments.push(assingment);
+    this._assigns.push(assingment);
   }
 
-  updateAssign(assignment:Assignment){
-    var _assignment = this._assignments.find(a=>a.id==assignment.id);
-    if(_assignment){
-      _assignment.idTask = assignment.idTask;
-      _assignment.idPerson = assignment.idPerson;
-      _assignment.createdAt = assignment.createdAt;
-      _assignment.dateAndTime = assignment.dateAndTime;
+  updateAssign(assignment:Assign){
+    var _assign = this._assigns.find(a=>a.id==assignment.id);
+    if(_assign){
+      _assign.idTask = assignment.idTask;
+      _assign.idPerson = assignment.idPerson;
+      _assign.createdAt = assignment.createdAt;
+      _assign.dateAndTime = assignment.dateAndTime;
     }
     
   }

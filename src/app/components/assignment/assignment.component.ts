@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IonItemSliding } from '@ionic/angular';
-import { Assignment } from 'src/app/models/assigment.model';
+import { Assign } from 'src/app/models/assignment.model';
 import { Person } from 'src/app/models/person.model';
 import { Task } from 'src/app/models/task.model';
 import { AssignmentService } from 'src/app/services/assign.service';
@@ -12,11 +12,11 @@ import { TasksService } from 'src/app/services/tasks.service';
   templateUrl: './assignment.component.html',
   styleUrls: ['./assignment.component.scss'],
 })
-export class AssigmentComponent implements OnInit {
+export class AssignmentComponent implements OnInit {
 
   @Output() onEdit = new EventEmitter;
   @Output() onDelete = new EventEmitter;
-  @Input() assignment:Assignment;
+  @Input() assignment:Assign;
   //isLowResolution = lowres;
   constructor(
     private peopleSvc:userPersonService,

@@ -3,8 +3,8 @@ import { userPersonService } from 'src/app/services/persons.service';
 import { AlertController, ModalController } from '@ionic/angular';
 import { PersonDetailComponent } from '../person-detail/person-detail.component';
 import { Person } from 'src/app/models/person.model';
-import { Assignment } from 'src/app/models/assigment.model';
 import { AssignmentService } from 'src/app/services/assign.service';
+import { Assign } from 'src/app/models/assignment.model';
 
 @Component({
   selector: 'app-persons',
