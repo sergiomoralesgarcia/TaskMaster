@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController, NavController } from '@ionic/angular';
 import { Assignment } from 'src/app/models/assigment.model';
 import { AssignmentService } from 'src/app/services/assign.service';
-import { AssignmentsDetailComponent } from '../assignment-detail/assignment-detail.component';
+import { AssignmentDetailComponent } from '../assignment-detail/assignment-detail.component';
 
 @Component({
   selector: 'app-assign',
@@ -25,7 +25,7 @@ export class AssignPage implements OnInit {
 
   async presentAssignForm(assignment:Assignment){
     const modal = await this.modal.create({
-      component:AssignmentsDetailComponent,
+      component:AssignmentDetailComponent,
       componentProps:{
         person:assignment
       },
