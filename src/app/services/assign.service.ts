@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as moment from 'moment';
+import * as moment from 'moment-timezone';
 import { Assign } from '../models/assignment.model';
 
 @Injectable({
@@ -13,15 +13,15 @@ export class AssignmentService {
       id:1,
       idPerson:1,
       idTask:1,
-      createdAt:this.momentjs().toISOString(),
-      dateAndTime:this.momentjs().add(1, 'days').toISOString(),
+      createdAt:moment().toISOString(),
+      dateAndTime:moment().add(1, 'days').toLocaleString(),
     },
     {
         id:2,
         idPerson:2,
         idTask:2,
-        createdAt:this.momentjs().toISOString(),
-        dateAndTime:this.momentjs().add(1, 'days').toISOString(),
+        createdAt:moment().toISOString(),
+        dateAndTime:moment().add(1, 'days').toLocaleString(),
       }
   ];
 
