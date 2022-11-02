@@ -1,6 +1,9 @@
 <ion-card>
   <ion-card-header>
-    <img src="\assets\user.png">
+    <ion-avatar class="person">
+      <img *ngIf="!person.image" src="\assets\user.png" />
+      <img *ngIf="person.image" alt="Person image" [src]="person.image" />
+    </ion-avatar>
     <ion-card-title>{{person.name}}</ion-card-title>
     <ion-card-subtitle>{{person.nickname}}, {{person.age}} años</ion-card-subtitle>
     <ion-button icon-only fill="clear" (click)="onEditClick()"><ion-icon style="zoom:1.5" name="pencil-sharp"></ion-icon></ion-button>

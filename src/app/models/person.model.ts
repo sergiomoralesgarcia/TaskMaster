@@ -3,5 +3,5 @@ export interface Person{
     name:string;
     nickname:string;
     age:number;
-    image:string;
+    image?:string;
 }

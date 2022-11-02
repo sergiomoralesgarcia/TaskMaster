@@ -18,7 +18,7 @@ export class TaskDetailComponent implements OnInit {
       this.form.controls.name.setValue(task.name);
       this.form.controls.description.setValue(task.description);
       this.form.controls.timeInSeconds.setValue(task.timeInSeconds);
-      this.form.controls.picture.setValue(task.image);
+      this.form.controls.image.setValue(task.image);
       this.mode = "Edit";
     }
   }
@@ -32,7 +32,7 @@ export class TaskDetailComponent implements OnInit {
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],
       timeInSeconds: ['', [Validators.required]],
-      picture: ['']
+      image: ['']
     });
   }
 
