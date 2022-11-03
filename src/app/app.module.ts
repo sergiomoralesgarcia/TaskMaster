@@ -11,9 +11,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TaskDetailComponent } from './pages/task-detail/task-detail.component';
 import { AssignmentDetailComponent } from './pages/assignment-detail/assignment-detail.component';
 import { PersonSelectableComponent } from './components/person-selectable/person-selectable.component';
+import { TaskSelectableComponent } from './components/task-selectable/task-selectable.component';
 
 @NgModule({
-  declarations: [AppComponent, PersonDetailComponent, TaskDetailComponent, AssignmentDetailComponent, PersonSelectableComponent],
+  declarations: [AppComponent, PersonDetailComponent, TaskDetailComponent, AssignmentDetailComponent, PersonSelectableComponent, TaskSelectableComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

@@ -26,7 +26,6 @@ export class AssignmentDetailComponent implements OnInit {
     }
   }
   
-
   constructor(
     private tasksSvc:TasksService,
     private peopleSvc:userPersonService,

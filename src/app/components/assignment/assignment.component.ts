@@ -18,13 +18,11 @@ export class AssignmentComponent implements OnInit {
   @Output() onDelete = new EventEmitter;
   @Input() assignment:Assign;
 
-  //isLowResolution = lowres;
   constructor(
     private peopleSvc:userPersonService,
     private tasksSvc:TasksService,
     private assignmentsSvc:AssignmentService
   ){
-
   }
 
   ngOnInit(
