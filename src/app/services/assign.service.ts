@@ -36,12 +36,12 @@ export class AssignmentService {
     return this._assigns.find(a=>a.id==id);
   }
 
-  getAssignsByTaskId(taskId:number):Assign[]{
-    return this._assigns.filter(a=>a.idTask == taskId);
+  getAssignsByTaskId(idTask:number):Assign[]{
+    return this._assigns.filter(a=>a.idTask == idTask);
   }
 
-  getAssignsByPersonId(personId:number):Assign[]{
-    return this._assigns.filter(a=>a.idPerson == personId);
+  getAssignsByPersonId(idPerson:number):Assign[]{
+    return this._assigns.filter(a=>a.idPerson == idPerson);
   }
 
   deleteAssignById(id:number){

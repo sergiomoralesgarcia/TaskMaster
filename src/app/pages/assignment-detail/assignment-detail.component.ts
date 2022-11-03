@@ -19,9 +19,9 @@ export class AssignmentDetailComponent implements OnInit {
   @Input('assign') set assignment(assignment:Assign){
     if(assignment){
       this.form.controls.id.setValue(assignment.id);
-      this.form.controls.taskId.setValue(assignment.idTask);
-      this.form.controls.personId.setValue(assignment.idPerson);
-      this.form.controls.dateTime.setValue(assignment.dateAndTime);
+      this.form.controls.idTask.setValue(assignment.idTask);
+      this.form.controls.idPerson.setValue(assignment.idPerson);
+      this.form.controls.dateAndTime.setValue(assignment.dateAndTime);
       this.mode = "Edit";
     }
   }
@@ -36,9 +36,9 @@ export class AssignmentDetailComponent implements OnInit {
   ) { 
     this.form = this.fb.group({
       id:[null],
-      taskId:[-1, [Validators.min(1)]],
-      personId:[-1, [Validators.min(1)]],
-      dateTime:['', [Validators.required]],
+      idTask:[-1, [Validators.min(1)]],
+      idPerson:[-1, [Validators.min(1)]],
+      dateAndTime:['', [Validators.required]],
     });
   }
 
@@ -56,7 +56,7 @@ export class AssignmentDetailComponent implements OnInit {
   }
 
   onChangeDateTime(dateAndTime){
-    this.form.controls.dateTime.setValue(dateAndTime);
+    this.form.controls.dateAndTime.setValue(dateAndTime);
   }
 
 }

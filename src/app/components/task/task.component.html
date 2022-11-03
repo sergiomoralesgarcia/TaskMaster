@@ -4,7 +4,7 @@
       <img *ngIf="task.image" alt="Person image" [src]="task.image" />
     
     <ion-card-title>{{task.name}}</ion-card-title>
-    <ion-card-subtitle>{{task.description}}, {{task.timeInSeconds}} segundos</ion-card-subtitle>
+    <ion-card-subtitle>{{task.description}}. {{task.timeInSeconds}} segundos</ion-card-subtitle>
     <ion-button icon-only fill="clear" (click)="onEditClick()"><ion-icon style="zoom:1.5" name="pencil-sharp"></ion-icon></ion-button>
     <ion-button icon-only fill="clear" color="danger" (click)="onDeleteClick()"><ion-icon style="zoom:1.5" name="close-sharp"></ion-icon></ion-button>
   </ion-card-header>
