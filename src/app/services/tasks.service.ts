@@ -8,38 +8,38 @@ export class TasksService {
   private _task: Task[] = [
     {
       id: 0,
-      name: 'Lavar platos',
-      description: 'Lava todos los platos sucios de la cocina',
+      name: 'Lavar los baños',
+      description: 'Lava los baños del intituto NUEVO, ten en cuenta que el baño de caballeros te llevará más tiempo.',
       timeInSeconds: 20000,
-      image: ''
+      image: "https://drive.google.com/uc?export=view&id=1ac5Xoo6-LXMykb438PtuRPnxcJGgyhkm"
     },
     {
       id: 1,
-      name: 'Ordenar la habitación',
-      description: 'Limpia y recoje tu cuarto, dejandolo ordenado',
+      name: 'Desarrolla Overwatch 3',
+      description: 'David Antúnez quiere jugar al Overwatch 3, solo tienes que copiar y pegar la segunda entrega.',
       timeInSeconds: 40000,
-      image: ''
+      image: "https://drive.google.com/uc?export=view&id=1IrLSTWK1jWfCi_gfr5n8pEMXKhhGAVc9"
     },
     {
       id: 2,
-      name: 'Hacer los deberes',
-      description: 'Haz los deberes que tengas pendientes antes de que acabe el dia',
+      name: 'Ir al gym',
+      description: 'Ve al gimnasio a entrenar que el cuerpo necesita  que te muevas un rato.',
       timeInSeconds: 30000,
-      image: ''
+      image: "https://drive.google.com/uc?export=view&id=1_dCCErHYqm2kyJrwNukHvQiT_YojXSPH"
     },
     {
       id: 3,
-      name: 'Ir al gimnasio',
-      description: 'Ve al gym a hacer ejercicio y despejarte un poco',
+      name: 'Hacer churros',
+      description: 'Los estudiantes de 2º DAM acaban de salir de clase y están ansiosos de comerse uno churros.',
       timeInSeconds: 12000,
-      image: ''
+      image: "https://drive.google.com/uc?export=view&id=1zcXUwvvxmwjSmffVCJ35ngBpPseUojGc"
     },
     {
       id: 4,
-      name: 'Jugar al lol',
-      description: 'Gana una ranked en un torneo contra Werlyb',
+      name: 'Haz de Uber',
+      description: 'Un amigo mio necesita urgentemente que le lleves a un sitio importante, no le falles que en el otro coche no había espacio.',
       timeInSeconds: 50000,
-      image: ''
+      image: "https://drive.google.com/uc?export=view&id=1ikR-01aVn3ICRaJgXedSqdjDm0wNDoZG"
     }
   ]
   id: number = this._task.length + 1;

@@ -11,35 +11,35 @@ export class userPersonService {
       name: 'Diego Rodriguez',
       nickname: 'Cordobeh',
       age: 20,
-      image: "https://drive.google.com/file/d/1oCzWNoF1yiDxgA09tzTvC9nEy1DS3Dev/view?usp=sharing"
+      image: "https://drive.google.com/uc?export=view&id=1g56LqrevlhL7Os6n-e6rIztuWtuScJk9"
     },
     {
       id: 1,
       name: 'Alejandro Cueto',
       nickname: 'Friki',
       age: 19,
-      image: "https://drive.google.com/file/d/1hItKLZcDnmW_dlxEdCSw63opdT4YzILI/view?usp=share_link2"
+      image: "https://drive.google.com/uc?export=view&id=1hItKLZcDnmW_dlxEdCSw63opdT4YzILI"
     },
     {
       id: 2,
       name: 'Alberto Parra',
       nickname: 'Parringson',
       age: 18,
-      image: "https://drive.google.com/file/d/1oCzWNoF1yiDxgA09tzTvC9nEy1DS3Dev/view?usp=share_link"
+      image: "https://drive.google.com/uc?export=view&id=1oCzWNoF1yiDxgA09tzTvC9nEy1DS3Dev"
     },
     {
       id: 3,
       name: 'Álvaro Linero',
       nickname: 'ElRey',
       age: 19,
-      image: "https://drive.google.com/file/d/103p4Uf-nW5VW72qGXq37N9GRruRf1oxC/view?usp=share_link"
+      image: "https://drive.google.com/uc?export=view&id=103p4Uf-nW5VW72qGXq37N9GRruRf1oxC"
     },
     {
       id: 4,
       name: 'David Antúnez',
       nickname: 'Fernando Alonso',
       age: 19,
-      image: "https://drive.google.com/file/d/1n8cnVuQSsdoZ5cjKc4fnua9tHZUhErVf/view?usp=share_link"
+      image: "https://drive.google.com/uc?export=view&id=1n8cnVuQSsdoZ5cjKc4fnua9tHZUhErVf"
     }
   ]
 

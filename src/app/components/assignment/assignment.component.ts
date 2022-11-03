@@ -17,6 +17,7 @@ export class AssignmentComponent implements OnInit {
   @Output() onEdit = new EventEmitter;
   @Output() onDelete = new EventEmitter;
   @Input() assignment:Assign;
+
   //isLowResolution = lowres;
   constructor(
     private peopleSvc:userPersonService,

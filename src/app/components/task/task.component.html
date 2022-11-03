@@ -1,6 +1,8 @@
 <ion-card>
   <ion-card-header>
-    <img src="\assets\user.png">
+      <img *ngIf="!task.image" src="\assets\user.png" />
+      <img *ngIf="task.image" alt="Person image" [src]="task.image" />
+    
     <ion-card-title>{{task.name}}</ion-card-title>
     <ion-card-subtitle>{{task.description}}, {{task.timeInSeconds}} segundos</ion-card-subtitle>
     <ion-button icon-only fill="clear" (click)="onEditClick()"><ion-icon style="zoom:1.5" name="pencil-sharp"></ion-icon></ion-button>

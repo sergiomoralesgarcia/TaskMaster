@@ -1,7 +1,7 @@
 <ion-card>
   <ion-card-header>
-      <img id="tarea" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" /><h1>-></h1>
-      <img id="perfil" src="\assets\user.png">
+      <img id="tareas" *ngIf="getTask()?.image" alt="Person picture" [src]="getTask().image" /><h1>-></h1>
+      <img id="personas" *ngIf="getPerson()?.image" alt="Person picture" [src]="getPerson().image" />
     <ion-card-subtitle>{{assignment.dateAndTime | date:'short'}}</ion-card-subtitle>
     <ion-button icon-only fill="clear" (click)="onEditClick()"><ion-icon style="zoom:1.5" name="pencil-sharp"></ion-icon></ion-button>
     <ion-button icon-only fill="clear" color="danger" (click)="onDeleteClick()"><ion-icon style="zoom:1.5" name="close-sharp"></ion-icon></ion-button>
