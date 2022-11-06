@@ -12,9 +12,10 @@ import { TaskDetailComponent } from './pages/task-detail/task-detail.component';
 import { AssignmentDetailComponent } from './pages/assignment-detail/assignment-detail.component';
 import { PersonSelectableComponent } from './components/person-selectable/person-selectable.component';
 import { TaskSelectableComponent } from './components/task-selectable/task-selectable.component';
+import { DateTimeSelectableComponent } from './components/date-time-selectable/date-time-selectable.component';
 
 @NgModule({
-  declarations: [AppComponent, PersonDetailComponent, TaskDetailComponent, AssignmentDetailComponent, PersonSelectableComponent, TaskSelectableComponent],
+  declarations: [AppComponent, PersonDetailComponent, TaskDetailComponent, AssignmentDetailComponent, PersonSelectableComponent, TaskSelectableComponent, DateTimeSelectableComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { IonItemSliding } from '@ionic/angular';
 import { Assign } from 'src/app/models/assignment.model';
 import { Person } from 'src/app/models/person.model';
 import { Task } from 'src/app/models/task.model';

@@ -1,14 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, forwardRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IonAccordionGroup } from '@ionic/angular';
 import { Person } from 'src/app/models/person.model';
 import { userPersonService } from 'src/app/services/persons.service';
+
+export const USER_PROFILE_VALUE_ACCESSOR: any = {
+  provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => PersonSelectableComponent),
+  multi: true
+};
 
 @Component({
   selector: 'app-person-selectable',
   templateUrl: './person-selectable.component.html',
   styleUrls: ['./person-selectable.component.scss'],
+  providers:[USER_PROFILE_VALUE_ACCESSOR]
 })
-export class PersonSelectableComponent implements OnInit {
+export class PersonSelectableComponent implements OnInit, ControlValueAccessor {
 
   selectedPerson:Person=null;
   propagateChange = (_: any) => { }
