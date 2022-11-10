@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IonAccordionGroup, IonDatetime } from '@ionic/angular';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-date-time-selectable',
@@ -7,8 +9,52 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DateTimeSelectableComponent implements OnInit {
 
-  constructor() { }
+  private moment:any = moment;
 
+  selectedDateTime:string=null;
+
+  propagateChage = (_:any) => {} //Propaga los cambios al componente padre.
+
+  isDisabled:boolean = false;
+
+  constructor() { 
+    this.selectedDateTime=this.moment().toISOString;
+  }
+  
+  registerOnTouched(fn: any): void {
+    
+  }
+  
   ngOnInit() {}
+
+  writeValue(obj:any): void{ //Escribe el nuevo valor en la variable.
+    this.selectedDateTime = obj;
+  }
+
+  registerOnChange(fn: any): void{
+    this.propagateChage = fn;
+  }
+
+  setDisableState?(isDisabled:boolean){
+    this.isDisabled = isDisabled;
+  }
+
+  getTime(){ //Devuelve la fecha
+    return this.selectedDateTime;
+  }
+
+  onDateTimeChanged(event, accordion:IonAccordionGroup){
+    this.selectedDateTime = event.detail.value; //Carga la variable con el evento.
+    accordion.value=['']; //Cierra el acordeon
+    this.propagateChage(this.selectedDateTime); //Propaga el cambio al evento padre (Assign-Details-component en este caso)
+  }
+
+  onCancel(datetime:IonDatetime, accordion){ //Cancela la operacion.
+    datetime.cancel();
+    accordion.value = [''];
+  }
+  onConfirm(datetime:IonDatetime, accordion){ //Confirma la operacion
+    datetime.confirm();
+  }
 
 }

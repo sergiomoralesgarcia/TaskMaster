@@ -45,6 +45,10 @@ export class TaskSelectableComponent implements OnInit, ControlValueAccessor {
     return this.taskSvc.getTask();
   } 
 
+  getTime(){ //Devuelve la fecha
+    return this.selectedTask;
+  }
+
   onTaskClicked(task:Task, accordion:IonAccordionGroup){
     this.selectedTask = task;
     accordion.value='';

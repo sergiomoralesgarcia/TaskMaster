@@ -1,13 +1,18 @@
-<!--<ion-accordion-group [multiple]="true" #accordion>
+<ion-accordion-group [multiple]="true" #accordion>
   <ion-accordion value="first">
     <ion-item slot="header" color="light">
-      <ion-label >Selecciona una fecha</ion-label>
+      <ng-container *ngIf="selectedDateTime!=null">
+        <ion-label>Selecciona una fecha y hora: {{getTime() | date:'short'}}</ion-label>
+      </ng-container>
     </ion-item>
     <div class="ion-padding" slot="content">
-      <ion-list>
-        <ion-datetime firstDayOfWeek="1"></ion-datetime>
-
-      </ion-list>
+      <ion-datetime #dateTime locale="es-ES" [value]="getTime()" (ionChange)="onDateTimeChanged($event, accordion)">
+        <span slot="time-label">Hora:</span> 
+        <ion-buttons slot="buttons">
+          <ion-button color="danger" (click)="onCancel(dateTime, accordion)">Cancelar</ion-button>
+          <ion-button color="primary" (click)="onConfirm(dateTime, accordion)">Guardar</ion-button>
+        </ion-buttons>
+      </ion-datetime>
     </div>
   </ion-accordion>
-</ion-accordion-group> -->
+</ion-accordion-group>
