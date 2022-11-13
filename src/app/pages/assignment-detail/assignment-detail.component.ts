@@ -2,6 +2,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { Assign } from 'src/app/models/assignment.model';
 import { Component, Input, OnInit } from '@angular/core';
+import { TasksService } from 'src/app/services/tasks.service';
+import { userPersonService } from 'src/app/services/persons.service';
 
 @Component({
   selector: 'app-assignment-detail',
@@ -24,12 +26,14 @@ export class AssignmentDetailComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private modal: ModalController
+    private modal: ModalController,
+    private taskSVC:TasksService,
+    private userSVC:userPersonService,
   ) {
     this.form = this.fb.group({
       id: [null],
-      idTask: [-1, [Validators.min(1)]],
-      idPerson: [-1, [Validators.min(1)]],
+      idTask: [0, [Validators.min(1)]],
+      idPerson: [0, [Validators.min(1)]],
       dateAndTime: ['', [Validators.required]],
     });
   }
@@ -49,6 +53,18 @@ export class AssignmentDetailComponent implements OnInit {
 
   onChangeDateTime(dateTime){
     this.form.controls.dateTime.setValue(dateTime);
+  }
+
+  getPeople(){
+    return this.userSVC.getPeople();
+  }
+
+  getTasks(){
+    return this.taskSVC.getTask();
+  }
+
+  onChange(event){
+    this.form.controls.dateTime.setValue(event.detail.value);
   }
 
 }

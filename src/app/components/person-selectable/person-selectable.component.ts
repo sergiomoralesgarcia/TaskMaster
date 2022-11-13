@@ -4,17 +4,18 @@ import { IonAccordionGroup } from '@ionic/angular';
 import { Person } from 'src/app/models/person.model';
 import { userPersonService } from 'src/app/services/persons.service';
 
+export const PERSON_PROFILE_VALUE_ACCESSOR: any = {
+  provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => PersonSelectableComponent),
+  multi: true
+};
+
+
 @Component({
   selector: 'app-person-selectable',
   templateUrl: './person-selectable.component.html',
   styleUrls: ['./person-selectable.component.scss'],
-  providers:[
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => PersonSelectableComponent),
-      multi: true
-    }
-  ]
+  providers: [PERSON_PROFILE_VALUE_ACCESSOR]
 })
 export class PersonSelectableComponent implements OnInit, ControlValueAccessor {
 
@@ -46,6 +47,7 @@ export class PersonSelectableComponent implements OnInit, ControlValueAccessor {
   } 
 
   onPersonClicked(person:Person, accordion:IonAccordionGroup){
+    console.log(person);
     this.selectedPerson = person;
     accordion.value='';
     this.propagateChange(this.selectedPerson.id);
