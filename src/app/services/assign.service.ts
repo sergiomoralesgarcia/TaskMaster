@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as moment from 'moment-timezone';
+import { BehaviorSubject } from 'rxjs';
 import { Assign } from '../models/assignment.model';
 
 @Injectable({
@@ -24,6 +25,9 @@ export class AssignmentService {
         dateAndTime:moment().add(1, 'days').toLocaleString(),
       }
   ];
+
+  private assignSubject:BehaviorSubject<Assign[]> = new BehaviorSubject(this._assigns);
+  public people$ = this.assignSubject.asObservable();
 
   id:number = this._assigns.length+1;
   constructor() { }

@@ -4,7 +4,7 @@ import { IonAccordionGroup } from '@ionic/angular';
 import { Person } from 'src/app/models/person.model';
 import { userPersonService } from 'src/app/services/persons.service';
 
-export const PERSON_PROFILE_VALUE_ACCESSOR: any = {
+export const USER_PROFILE_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => PersonSelectableComponent),
   multi: true
@@ -15,7 +15,7 @@ export const PERSON_PROFILE_VALUE_ACCESSOR: any = {
   selector: 'app-person-selectable',
   templateUrl: './person-selectable.component.html',
   styleUrls: ['./person-selectable.component.scss'],
-  providers: [PERSON_PROFILE_VALUE_ACCESSOR]
+  providers: [USER_PROFILE_VALUE_ACCESSOR]
 })
 export class PersonSelectableComponent implements OnInit, ControlValueAccessor {
 

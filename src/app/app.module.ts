@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -13,11 +13,21 @@ import { AssignmentDetailComponent } from './pages/assignment-detail/assignment-
 import { PersonSelectableComponent } from './components/person-selectable/person-selectable.component';
 import { TaskSelectableComponent } from './components/task-selectable/task-selectable.component';
 import { DateTimeSelectableComponent } from './components/date-time-selectable/date-time-selectable.component';
+import { registerLocaleData } from '@angular/common';
+
+//registerLocaleData(en);
+//registerLocaleData(es);
 
 @NgModule({
   declarations: [AppComponent, PersonDetailComponent, TaskDetailComponent, AssignmentDetailComponent, PersonSelectableComponent, TaskSelectableComponent, DateTimeSelectableComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
+  /*providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'es',
+    },
+  ]*/
 })
 export class AppModule {}

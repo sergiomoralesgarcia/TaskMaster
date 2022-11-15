@@ -1,23 +1,26 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Datos de la assignación</ion-title>
+    <ion-title>Person data</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="onDismiss(null)">Cerrar</ion-button>
+      <ion-button (click)="onDismiss(null)">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  
+
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
-    <app-person-selectable formControlName="personId"></app-person-selectable>
+    <app-person-selectable formControlName="idPerson"></app-person-selectable>
     <app-task-selectable formControlName="idTask"></app-task-selectable>
     <app-date-time-selectable formControlName="dateAndTime"></app-date-time-selectable>
-
-    <ion-modal [keepContentsMounted]="true">
-      <ng-template>
-        <ion-datetime id="datetime"></ion-datetime>
-      </ng-template>
-    </ion-modal>
-    <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modify":"Add"}}</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </form>
 </ion-content>
+
