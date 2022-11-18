@@ -18,7 +18,7 @@ export class DateTimeSelectableComponent implements OnInit {
   isDisabled:boolean = false;
 
   constructor() { 
-    this.selectedDateTime=this.moment().toISOString;
+    this.selectedDateTime=this.moment().toISOString();
   }
   
   registerOnTouched(fn: any): void {
