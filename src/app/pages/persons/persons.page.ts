@@ -5,6 +5,7 @@ import { PersonDetailComponent } from '../person-detail/person-detail.component'
 import { Person } from 'src/app/models/person.model';
 import { AssignmentService } from 'src/app/services/assign.service';
 import { Assign } from 'src/app/models/assignment.model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-persons',
@@ -16,7 +17,14 @@ export class PersonsPage {
     private alert:AlertController,
     private modal: ModalController,
     private personService:userPersonService,
-    private assignmentsSvc:AssignmentService) {}
+    private assignmentsSvc:AssignmentService,
+    private translateService: TranslateService) {}
+
+  language: string = this.translateService.currentLang;
+
+  languageChange() {  
+    this.translateService.use(this.language);  
+  }
 
   ngOnInit() {
   }

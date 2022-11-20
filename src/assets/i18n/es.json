@@ -1,0 +1,25 @@
+{
+    "home": {
+        "tabName": "Inicio",
+        "invite": "Has seleccionado {{lang}}",
+        "languageChangePlaceholder": "Cambiar idioma",
+        "person": "Personas",
+        "assign": "Assignaciones",
+        "tasks": "Tareas",
+        "title": "Botones para acceder a otras páginas"
+
+    },
+    "Language": "Español",
+
+    "persons":{
+        "tabName": "Personas"
+    },
+
+    "persons-detail":{
+        "tabName": "Datos de la persona",
+        "close": "Cerrar",
+        "name": "Nombre",
+        "nickname": "Apodo",
+        "age": "Edad"
+    }
+}

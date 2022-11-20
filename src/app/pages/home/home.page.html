@@ -1,23 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Home
+      {{ 'home.tabName' | translate }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
+  <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Home</ion-title>
     </ion-toolbar>
   </ion-header>
 
+  
+  <ion-card-content>
+    <p translate [translateParams]="{ lang: language }">home.invite</p>
+    <ion-item> <!-- add this block -->
+      <ion-label translate>Language</ion-label>
+      <ion-select [(ngModel)]='language' (ionChange)='languageChange()' [placeholder]='"home.languageChangePlaceholder" | translate'>
+        <ion-select-option value='es'>Español</ion-select-option>
+        <ion-select-option value='en'>English</ion-select-option>
+      </ion-select>
+    </ion-item> <!-- add this block (end) -->
+  </ion-card-content>
+
+
   <div id="container">
-    <p>Botones para acceder a otras páginas:</p>
-    <ion-button (click)="abrirPersons()">Person</ion-button>
-    <ion-button (click)="abrirAssign()">Assign</ion-button>
-    <ion-button (click)="abrirTasks()">Tasks</ion-button>
+    <p translate [translateParams]="{ lang: language }">home.title</p>
+    <ion-button (click)="abrirPersons()" translate [translateParams]="{ lang: language }">home.person</ion-button>
+    <ion-button (click)="abrirAssign()" translate [translateParams]="{ lang: language }">home.assign</ion-button>
+    <ion-button (click)="abrirTasks()" translate [translateParams]="{ lang: language }">home.tasks</ion-button>
   </div>
 </ion-content>

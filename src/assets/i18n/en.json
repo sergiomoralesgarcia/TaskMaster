@@ -1,0 +1,26 @@
+{
+    "home": {
+        "tabName": "Home",
+        "invite": "Now you have selected {{lang}}",
+        "languageChangePlaceholder": "Change language",
+        "person": "Persons",
+        "assign": "Assigns",
+        "tasks": "Tasks",
+        "title": "Buttons to access to another pages"
+
+    },
+    "Language": "English",
+
+    "persons":{
+        "tabName": "Persons"
+    },
+
+    "persons-detail":{
+        "tabName": "Data of the person",
+        "close": "Close",
+        "name": "Name",
+        "nickname": "Nickname",
+        "age": "Age"
+    }
+
+}

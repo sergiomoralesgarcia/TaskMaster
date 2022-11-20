@@ -35,3 +35,16 @@ ion-menu::part(container) {
 
   box-shadow: 4px 0px 16px rgba(255, 0, 255, 0.18);
 }
+body, html {
+  padding: 0;
+  margin:  0;
+  width: 100%;
+  height: 100%;
+  // overflow: hidden;
+}
+
+body {
+  background: rgba(241, 226, 215, 0.2);
+  position: relative;
+  background: #FD5061;
+}

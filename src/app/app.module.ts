@@ -14,13 +14,25 @@ import { PersonSelectableComponent } from './components/person-selectable/person
 import { TaskSelectableComponent } from './components/task-selectable/task-selectable.component';
 import { DateTimeSelectableComponent } from './components/date-time-selectable/date-time-selectable.component';
 import { registerLocaleData } from '@angular/common';
+// other imports here...
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 //registerLocaleData(en);
 //registerLocaleData(es);
 
 @NgModule({
   declarations: [AppComponent, PersonDetailComponent, TaskDetailComponent, AssignmentDetailComponent, PersonSelectableComponent, TaskSelectableComponent, DateTimeSelectableComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ReactiveFormsModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
+    HttpClientModule, 
+    TranslateModule.forRoot({ 
+      loader: { 
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader), 
+        deps: [HttpClient] 
+      } 
+    }) ,ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
   /*providers: [
@@ -31,3 +43,7 @@ import { registerLocaleData } from '@angular/common';
   ]*/
 })
 export class AppModule {}
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}

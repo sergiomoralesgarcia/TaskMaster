@@ -6,30 +6,29 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PersonsRoutingModule } from './persons-routing.module';
 
-import { PersonsPage } from './persons.page';
 import { PeopleComponentModule } from 'src/app/components/person/person.module';
 import { HttpClient } from '@angular/common/http';
+import { PersonsRoutingModule } from '../persons/persons-routing.module';
+import { PersonDetailComponent } from './person-detail.component';
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+    return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
 
 @NgModule({
-  imports: [
+    imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     PeopleComponentModule,
     PersonsRoutingModule,
     TranslateModule.forChild({
-      loader: {
+        loader: {
         provide: TranslateLoader,
         useFactory: createTranslateLoader,
         deps: [HttpClient]
-      }
+        }
     })
-  ],
-  declarations: [PersonsPage]
+    ]
 })
-export class PersonsPageModule {}
+export class PersonsDetailModule {}

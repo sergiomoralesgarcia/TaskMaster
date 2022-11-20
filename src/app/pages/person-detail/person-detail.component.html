@@ -1,28 +1,28 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Datos de la persona</ion-title>
+    <ion-title>{{ 'persons-detail.tabName' | translate }}</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="onDismiss()">Cerrar</ion-button>
+      <ion-button (click)="onDismiss()" translate [translateParams]="{ lang: language }" >persons-detail.close</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
     <ion-item>
-      <ion-label position="floating">
-        Nombre
+      <ion-label position="floating" translate [translateParams]="{ lang: language }">
+        persons-detail.name
       </ion-label>
       <ion-input type="text" placeholder="Introduce el nombre" formControlName="name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">
-        Apodo
+      <ion-label position="floating" translate [translateParams]="{ lang: language }">
+        persons-detail.nickname
       </ion-label>
       <ion-input type="text" placeholder="Introduce el apodo" formControlName="nickname"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">
-        Edad
+      <ion-label position="floating" translate [translateParams]="{ lang: language }">
+        persons-detail.age
       </ion-label>
       <ion-input type="text" placeholder="Introduce la edad" formControlName="age"></ion-input>
     </ion-item>

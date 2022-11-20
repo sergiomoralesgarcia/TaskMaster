@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 import { Person } from 'src/app/models/person.model';
 
 @Component({
@@ -26,7 +27,8 @@ export class PersonDetailComponent implements OnInit {
 
   constructor(
     private fb:FormBuilder,
-    private modal:ModalController  ) { 
+    private modal:ModalController,
+    private translateService: TranslateService  ) { 
     this.form = this.fb.group({
       id:[null],
       name:['', [Validators.required]],
@@ -34,6 +36,12 @@ export class PersonDetailComponent implements OnInit {
       age:['', [Validators.required]],
       image:['']
     });
+  }
+
+  language: string = this.translateService.currentLang;
+
+  languageChange() {  
+    this.translateService.use(this.language);  
   }
 
   ngOnInit() {
