@@ -1,28 +1,30 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Datos de la persona</ion-title>
+    <ion-title>      
+      {{ 'task-detail.tabName' | translate }}
+    </ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="onDismiss()">Cerrar</ion-button>
+      <ion-button (click)="onDismiss()" translate [translateParams]="{ lang: language }" >task-detail.close</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
     <ion-item>
-      <ion-label position="floating">
-        Nombre
+      <ion-label position="floating" translate [translateParams]="{ lang: language }">
+        task-detail.name
       </ion-label>
       <ion-input type="text" placeholder="Introduce el nombre" formControlName="name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">
-        Descripción
+      <ion-label position="floating" translate [translateParams]="{ lang: language }">
+        task-detail.description
       </ion-label>
       <ion-input type="text" placeholder="Introduce la descripción" formControlName="description"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">
-        Tiempo en segundos
+      <ion-label position="floating" translate [translateParams]="{ lang: language }">
+        task-detail.time
       </ion-label>
       <ion-input type="text" placeholder="Introduce los segundos" formControlName="timeInSeconds"></ion-input>
     </ion-item>

@@ -21,6 +21,22 @@
         "name": "Name",
         "nickname": "Nickname",
         "age": "Age"
+    },
+
+    "assign":{
+        "tabName": "Assigns"
+    },
+    
+    "assignment-detail":{
+        "tabName": "Profile Data"
+    }, 
+
+    "task-detail":{
+        "tabName": "Tasks",
+        "close": "Close",
+        "name": "Name", 
+        "description": "Description",
+        "time": "Time in seconds"
     }
 
 }

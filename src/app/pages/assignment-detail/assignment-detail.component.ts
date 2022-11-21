@@ -4,6 +4,7 @@ import { Assign } from 'src/app/models/assignment.model';
 import { Component, Input, OnInit } from '@angular/core';
 import { TasksService } from 'src/app/services/tasks.service';
 import { userPersonService } from 'src/app/services/persons.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-assignment-detail',
@@ -29,6 +30,7 @@ export class AssignmentDetailComponent implements OnInit {
     private modal: ModalController,
     private taskSVC:TasksService,
     private userSVC:userPersonService,
+    private translateService: TranslateService
   ) {
     this.form = this.fb.group({
       id: [null],
@@ -36,6 +38,12 @@ export class AssignmentDetailComponent implements OnInit {
       idPerson: [0, [Validators.min(1)]],
       dateAndTime: ['', [Validators.required]],
     });
+  }
+
+  language: string = this.translateService.currentLang;
+
+  languageChange() {  
+    this.translateService.use(this.language);  
   }
 
   ngOnInit() {

@@ -21,5 +21,21 @@
         "name": "Nombre",
         "nickname": "Apodo",
         "age": "Edad"
+    },
+
+    "assign":{
+        "tabName": "Assignaciones"
+    },
+    
+    "assignment-detail":{
+        "tabName": "Datos del Perfil"
+    }, 
+
+    "task-detail":{
+        "tabName": "Tareas",
+        "close": "Cerrar",
+        "name": "Nombre", 
+        "description": "Descripción",
+        "time": "Tiempo en segundos"
     }
 }

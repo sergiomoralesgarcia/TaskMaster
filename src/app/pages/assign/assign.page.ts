@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController, NavController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 import { Assign } from 'src/app/models/assignment.model';
 import { AssignmentService } from 'src/app/services/assign.service';
 import { AssignmentDetailComponent } from '../assignment-detail/assignment-detail.component';
@@ -14,8 +15,15 @@ export class AssignPage implements OnInit {
   constructor(
     private assignmentsSvc:AssignmentService,
     private modal:ModalController,
-    private alert:AlertController
+    private alert:AlertController,
+    private translateService: TranslateService
   ) { }
+
+  language: string = this.translateService.currentLang;
+
+  languageChange() {  
+    this.translateService.use(this.language);  
+  }
 
   ngOnInit() {}
 
